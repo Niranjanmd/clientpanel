@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+=======
+import { RouterModule, Routes } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+>>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
 // Angular Fire Import
 import {AngularFireModule} from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -24,18 +30,26 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 // Services Import
 import { ClientService } from './services/client.service';
+<<<<<<< HEAD
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 // angular2 Flash
 // import { FlashMessagesModule } from 'angular2-flash-messages/module';
+=======
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
+>>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
 
 const appRouts: Routes = [
   {path: '', component: DashboardComponent},
   {path: 'register', component: RegisterComponent},
+<<<<<<< HEAD
   {path: 'login', component : LoginComponent},
   {path:'add-client',component:AddClientComponent},
   {path:'edit-client/:id',component: EditClientComponent },
   {path: 'client/:id',component: ClientDetailsComponent}
+=======
+  {path: 'login', component : LoginComponent}
+>>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
 ];
 
 export const firebaseCofig = {
@@ -65,9 +79,13 @@ export const firebaseCofig = {
     BrowserModule,
     RouterModule.forRoot(appRouts),
     AngularFireModule.initializeApp(firebaseCofig),
+<<<<<<< HEAD
     AngularFireDatabaseModule,
     FormsModule,
     // FlashMessagesModule
+=======
+    AngularFireDatabaseModule
+>>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
   ],
   providers: [
     AngularFireAuth,

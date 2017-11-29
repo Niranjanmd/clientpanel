@@ -20,7 +20,10 @@
       "prefix": "app",
       "styles": [
         "styles.css",
+<<<<<<< HEAD
         "../node_modules/font-awesome/css/font-awesome.css",
+=======
+>>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
         "../node_modules/bootstrap/dist/css/bootstrap.css"
       ],
       "scripts": [

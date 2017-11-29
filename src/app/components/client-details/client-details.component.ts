@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 
 import { ClientService } from './../../services/client.service';
 import { Client } from './../../models/client';
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute,Params } from '@angular/router';
 
+=======
+import { Component, OnInit } from '@angular/core';
+>>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
 
 @Component({
   selector: 'app-client-details',
@@ -11,6 +15,7 @@ import { Router,ActivatedRoute,Params } from '@angular/router';
   styleUrls: ['./client-details.component.css']
 })
 export class ClientDetailsComponent implements OnInit {
+<<<<<<< HEAD
   id: string;
   client: Client;
   hasBalance: boolean;
@@ -49,6 +54,12 @@ export class ClientDetailsComponent implements OnInit {
     this.clientService.deleteClient(this.id);
     this.router.navigate(['/']);
    }
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+>>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
   }
 
 }
