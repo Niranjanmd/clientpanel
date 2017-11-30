@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -44,12 +44,9 @@ const appRouts: Routes = [
   {path: 'register', component: RegisterComponent},
 <<<<<<< HEAD
   {path: 'login', component : LoginComponent},
-  {path:'add-client',component:AddClientComponent},
-  {path:'edit-client/:id',component: EditClientComponent },
-  {path: 'client/:id',component: ClientDetailsComponent}
-=======
-  {path: 'login', component : LoginComponent}
->>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
+  {path: 'add-client', component: AddClientComponent},
+  {path: 'edit-client/:id', component: EditClientComponent },
+  {path: 'client/:id', component: ClientDetailsComponent}
 ];
 
 export const firebaseCofig = {
@@ -90,7 +87,8 @@ export const firebaseCofig = {
   providers: [
     AngularFireAuth,
     AngularFireDatabase,
-    ClientService
+    ClientService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
