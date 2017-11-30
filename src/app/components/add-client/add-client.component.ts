@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Client } from '../../models/client';
@@ -6,9 +5,6 @@ import { Router } from '@angular/router';
 
 // import { FlashMessagesService } from 'angular2-flash-messages';
 import { ClientService } from '../../services/client.service';
-=======
-import { Component, OnInit } from '@angular/core';
->>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
 
 @Component({
   selector: 'app-add-client',
@@ -25,15 +21,10 @@ export class AddClientComponent implements OnInit {
   };
   disableBalanceOnAdd = true;
   constructor(public clientService: ClientService) { }
-=======
-
-  constructor() { }
->>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
 
   ngOnInit() {
   }
 
-<<<<<<< HEAD
 
 
   onSubmit({value, valid}: {value: Client, valid: boolean}){
@@ -50,6 +41,4 @@ export class AddClientComponent implements OnInit {
     }
 
   }
-=======
->>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
 }

@@ -8,7 +8,6 @@ import { Client } from '../../models/client';
   styleUrls: ['./clients.component.css']
 })
 export class ClientsComponent implements OnInit {
-<<<<<<< HEAD
   clients: any[];
 
   totalOwed: number;
@@ -39,16 +38,4 @@ export class ClientsComponent implements OnInit {
     console.log(total);
   }
 
-=======
-  clients: Client[];
-  constructor(public cs: ClientService) { }
-
-  ngOnInit() {
-    this.cs.getClient().subscribe(c => {
-        this.clients = c;
-        console.log(this.clients);
-      });
-  }
-
->>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
 }

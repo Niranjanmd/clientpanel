@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 import { Client } from './../models/client';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable , FirebaseObjectObservable } from 'angularfire2/database';
 // tslint:disable-next-line:import-blacklist
 import { Observable } from 'rxjs';
 
-=======
-import { Injectable } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable , FirebaseObjectObservable } from 'angularfire2/database-deprecated';
-// tslint:disable-next-line:import-blacklist
-import { Observable } from 'rxjs';
-import { Client } from '../models/client';
->>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
 
 @Injectable()
 export class ClientService {
@@ -22,7 +14,6 @@ export class ClientService {
     this.clients = this.af.list('/clients') as FirebaseListObservable<Client[]>;
   }
 
-<<<<<<< HEAD
   getClients() {
     return this.clients;
   }
@@ -45,10 +36,4 @@ export class ClientService {
     return this.clients.remove(id);
   }
 
-=======
-  getClient() {
-    return this.clients;
-  }
-
->>>>>>> 94e97fce24a4f29821e606d17482a7888076a57b
 }
