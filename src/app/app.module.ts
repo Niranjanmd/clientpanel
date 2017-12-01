@@ -28,16 +28,19 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ClientService } from './services/client.service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AuthGaurd } from './gaurds/auth.gaurd';
+import { RegisterGaurd } from './gaurds/register.gaurd';
 // angular2 Flash
 // import { FlashMessagesModule } from 'angular2-flash-messages/module';
 
 const appRouts: Routes = [
   {path: '', component: DashboardComponent, canActivate: [AuthGaurd]},
-  {path: 'register', component: RegisterComponent},
-  {path: 'login', component : LoginComponent},
+  { path: 'register', component: RegisterComponent, canActivate: [RegisterGaurd]},
+  { path: 'login', component : LoginComponent},
   { path: 'add-client', component: AddClientComponent, canActivate: [AuthGaurd]},
   { path: 'edit-client/:id', component: EditClientComponent, canActivate: [AuthGaurd] },
-  { path: 'client/:id', component: ClientDetailsComponent, canActivate: [AuthGaurd]}
+  { path: 'client/:id', component: ClientDetailsComponent, canActivate: [AuthGaurd]},
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGaurd] },
+  { path: '**', component: PageNotFoundComponent}
 ];
 
 export const firebaseCofig = {
@@ -77,7 +80,8 @@ export const firebaseCofig = {
     ClientService,
     AuthService,
     AuthGaurd,
-    SettingsService
+    SettingsService,
+    RegisterGaurd
   ],
   bootstrap: [AppComponent]
 })

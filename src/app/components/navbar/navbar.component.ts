@@ -1,3 +1,4 @@
+import { SettingsService } from '../../services/settings.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import 'rxjs/add/operator/map';
@@ -14,7 +15,8 @@ export class NavbarComponent implements OnInit {
   showRegister: boolean;
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private settingService: SettingsService
   ) { }
 
   ngOnInit() {
@@ -25,6 +27,11 @@ export class NavbarComponent implements OnInit {
       } else {
         this.isLoggedIn = false;
       }
+    });
+
+    this.authService.ananomusSignin()
+    this.settingService.getSettings().subscribe((setting) => {
+      this.showRegister = setting.allowRegistration;
     });
   }
 

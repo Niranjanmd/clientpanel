@@ -21,12 +21,16 @@ export class EditClientComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-   this.disableBalanceOnEdit = this.settingService.getSettings().disableBalanceOnEdit;
+   
    this.id=this.route.snapshot.params['id'];
   
    this.clientService.getClient(this.id).subscribe( client => {
      this.client = client;
    });
+
+    this.settingService.getSettings().subscribe((setting) => {
+      this.disableBalanceOnEdit = setting.disableBalanceOnEdit;
+    });
 
   }
 

@@ -21,10 +21,12 @@ export class AddClientComponent implements OnInit {
     balance: 0
   };
   disableBalanceOnAdd = true;
-  constructor(public clientService: ClientService,public settingService: SettingsService) { }
+  constructor(public clientService: ClientService, public settingService: SettingsService) { }
 
   ngOnInit() {
-    this.disableBalanceOnAdd=this.settingService.getSettings().disableBalanceOnAdd;
+     this.settingService.getSettings().subscribe((setting) => {
+      this.disableBalanceOnAdd = setting.disableBalanceOnAdd;
+    });
   }
 
 
