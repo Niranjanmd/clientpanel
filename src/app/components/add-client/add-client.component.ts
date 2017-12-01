@@ -2,6 +2,7 @@ import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Client } from '../../models/client';
 import { Router } from '@angular/router';
+import { SettingsService } from './../../services/settings.service';
 
 // import { FlashMessagesService } from 'angular2-flash-messages';
 import { ClientService } from '../../services/client.service';
@@ -20,9 +21,10 @@ export class AddClientComponent implements OnInit {
     balance: 0
   };
   disableBalanceOnAdd = true;
-  constructor(public clientService: ClientService) { }
+  constructor(public clientService: ClientService,public settingService: SettingsService) { }
 
   ngOnInit() {
+    this.disableBalanceOnAdd=this.settingService.getSettings().disableBalanceOnAdd;
   }
 
 

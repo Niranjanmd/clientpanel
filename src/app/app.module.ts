@@ -1,3 +1,4 @@
+import { SettingsService } from './services/settings.service';
 import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -75,7 +76,8 @@ export const firebaseCofig = {
     AngularFireDatabase,
     ClientService,
     AuthService,
-    AuthGaurd
+    AuthGaurd,
+    SettingsService
   ],
   bootstrap: [AppComponent]
 })
