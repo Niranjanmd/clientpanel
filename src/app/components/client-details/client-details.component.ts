@@ -39,9 +39,13 @@ export class ClientDetailsComponent implements OnInit {
   }
 
   updateBalance(id: string){
-    this.clientService.updateClient(this.id,this.client);
-    alert('balance Updated');
-    this.showBalanceUpdateInput=false;
+    this.clientService.updateClient(this.id,this.client)
+    .subscribe( res=>{
+      alert('balance Updated');
+      this.showBalanceUpdateInput = false;
+      console.log(res);
+    });
+  
   }
 
   onDeleteClick(){

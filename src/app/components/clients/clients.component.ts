@@ -19,10 +19,15 @@ export class ClientsComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.cs.getClients().subscribe(c => {
-        this.clients = c;
-        this.getTotalOwned();
-      });
+    // this.cs.getClients().subscribe(c => {
+    //     this.clients = c;
+    //     this.getTotalOwned();
+    //   });
+
+    this.cs.getApiClients().subscribe(c => {
+      this.clients = c;
+      this.getTotalOwned();
+    })
   }
 
   getTotalOwned(){

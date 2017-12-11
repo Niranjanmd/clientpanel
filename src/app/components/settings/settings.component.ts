@@ -10,6 +10,7 @@ import { SettingsService } from '../../services/settings.service';
 })
 export class SettingsComponent implements OnInit {
   settings: Settings;
+  update: boolean;
   constructor(
     public settingService: SettingsService,
     public router: Router
@@ -17,11 +18,15 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit() {
     this.settingService.getSettings().subscribe((res)=>{
+      console.log(res);
       this.settings = res;
     });
   }
 
   onSubmit() {
-    this.settingService.changeSettings(this.settings);
+    this.settingService.changeSettings(this.settings).subscribe((res) => {
+      this.update = res;
+      console.log(res);
+    });
   }
 }

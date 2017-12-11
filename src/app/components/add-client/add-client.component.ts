@@ -20,6 +20,7 @@ export class AddClientComponent implements OnInit {
     phone: '',
     balance: 0
   };
+  added : boolean;
   disableBalanceOnAdd = true;
   constructor(public clientService: ClientService, public settingService: SettingsService) { }
 
@@ -36,7 +37,9 @@ export class AddClientComponent implements OnInit {
       value.balance = 0;
     }
     if (valid){
-      this.clientService.newClient(value);
+      this.clientService.newClient(value).subscribe((res) =>{
+        this.added=res;
+      });
       alert('Client Added Successfully!!');
 
     }else{

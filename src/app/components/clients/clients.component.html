@@ -20,12 +20,12 @@
   </thead>
   <tbody>
     <tr *ngFor="let client of clients">
-      <td>{{ client.$key }}</td>
+      <td>{{ client.Id }}</td>
       <td>{{ client.firstName }}</td>
       <td>{{ client.email }}</td>
       <td>{{ client.phone }}</td>
       <td>{{ client.balance |currency:"inr":true  }}</td>
-      <td> <a [routerLink]="['client/'+client.$key]" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i>  Details</a> </td>
+      <td> <a [routerLink]="['client/'+client.Id]" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i>  Details</a> </td>
     </tr>
   </tbody>
 </table>

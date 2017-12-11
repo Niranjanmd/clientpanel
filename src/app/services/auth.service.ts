@@ -20,10 +20,6 @@ export class AuthService {
     return this.afAuth.authState.map(auth => auth);
   }
 
-  ananomusLogin(){
-    this.afAuth.signInAnonymously();
-  }
-
   logout() {
     this.afAuth.auth.signOut();
   }

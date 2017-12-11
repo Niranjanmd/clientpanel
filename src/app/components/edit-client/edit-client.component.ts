@@ -13,6 +13,7 @@ export class EditClientComponent implements OnInit {
   client :Client;
   id: string;
   disableBalanceOnEdit: boolean;
+  updateStatus: boolean;
   constructor(
     public clientService: ClientService,
     public route: ActivatedRoute,
@@ -36,9 +37,13 @@ export class EditClientComponent implements OnInit {
 
   onSubmit({value,valid}:{value: Client,valid: boolean}){
     if(valid){
-      this.clientService.updateClient(this.id,value)
-      alert('Client Details Updated Successfully');
-      this.router.navigate(['/']);
+      this.clientService.updateClient(this.id, value)
+      .subscribe((res => {
+        this.updateStatus=res
+        alert('Client Details Updated Successfully');
+        this.router.navigate(['/']);
+      }));
+     
     }else{
       alert('Please fill all the required fields');
     }

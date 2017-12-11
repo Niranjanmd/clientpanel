@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Settings } from '../models/settings';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
-
+import { Http, Headers } from '@angular/http';
 @Injectable()
 export class SettingsService implements OnInit {
   settings: FirebaseObjectObservable<Settings>;
@@ -10,10 +10,12 @@ export class SettingsService implements OnInit {
   //   disableBalanceOnEdit: false,
   //   allowRegistration: false
   // };
+  private apiUrl = 'http://localhost:55694/api/settings/';
   constructor(
-    private af: AngularFireDatabase
+    private af: AngularFireDatabase,
+    private _http: Http
   ) { 
-    this.settings = this.af.object('settings') as FirebaseObjectObservable<Settings>;
+    // this.settings = this.af.object('settings') as FirebaseObjectObservable<Settings>;
   }
 
 
@@ -22,11 +24,15 @@ export class SettingsService implements OnInit {
   }
 
   getSettings() {
-    return this.settings;
+    return this._http.get(this.apiUrl)
+    .map((res) => res.json());
   }
 
   changeSettings(setting: Settings) {
-    this.settings.update(setting);
+    let headers = new Headers();
+    headers.append('content-type', 'application/json');
+    return this._http.put(this.apiUrl,setting,{headers:headers })
+      .map((res) => res.json());
   }
 
 }

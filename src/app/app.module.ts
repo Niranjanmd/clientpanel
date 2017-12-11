@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { Http, HttpModule  } from '@angular/http';
 // Angular Fire Import
 import {AngularFireModule} from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -72,6 +72,7 @@ export const firebaseCofig = {
     AngularFireModule.initializeApp(firebaseCofig),
     AngularFireDatabaseModule,
     FormsModule,
+    HttpModule
     // FlashMessagesModule
   ],
   providers: [

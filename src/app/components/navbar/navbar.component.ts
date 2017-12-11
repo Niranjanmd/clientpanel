@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
       }
     });
 
-    this.authService.ananomusSignin()
+   
     this.settingService.getSettings().subscribe((setting) => {
       this.showRegister = setting.allowRegistration;
     });
